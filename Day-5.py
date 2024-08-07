@@ -22,7 +22,7 @@ print(f"The password is: {first_password}")
 
 #Hard Level - Order of characters randomised:
 string_list = list(first_password)
-random.shuffle(string_list)
+random.shuffle(string_list) 
 rand_password = ''.join(string_list)
 
 print(f"The random password is: {rand_password}")
