@@ -1,0 +1,1 @@
+This is my learning jouney journal of 100 Days Python.
