@@ -1,1 +1,3 @@
-This is my learning jouney journal of 100 Days Python.
+# 100 Days of Python.
+
+This is my learnings from 100 Days of Python.
