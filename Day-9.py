@@ -1,22 +1,24 @@
-definition = {
-    "bug":"an error in program",
-    "Function":"a piece of code"
-}
+from secret_auction_art import *
 
-# print(definition)
+print(logo)
 
-#adding 
-definition["loop"] = "a piece of code running multiple times"
-# print(definition)
+bidder_info = {"Dummy":0}
+flag = True
 
-#editing
-definition["loop"] = "keyword to run a code multiple times"
+while flag:
+    name = input("Enter the bidder name: ")
+    bid = int(input("Enter your bid: $"))
+    bidder_info[name] = bid
+    decision = input("Are there other bidders(yes/no)?: ").lower()
 
-# print(definition)
+    if decision == "no":
+        flag = False
 
-for key in definition:
-    print(key)
-    print(definition[key])
 
-#wiping out dictionary
-definition = {}
+max_bidder = "Dummy"
+
+for key in bidder_info:
+    if bidder_info[key] > bidder_info[max_bidder]:
+        max_bidder = key
+
+print(f"The winner is {max_bidder} with a bid of ${bidder_info[max_bidder]}.")
