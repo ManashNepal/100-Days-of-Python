@@ -22,12 +22,13 @@ operator_dictionary = {"+":add,
                        "/":divide
                         }
 
-while(True):
-    print(logo)
+def calculator():
+    print(logo) 
     num1 = float(input("What's the first number?: "))
     flag = True
-    while(flag):
-        print(f"+\n-\n*\n/")
+    while flag:
+        for key in operator_dictionary:
+            print(key)
         operation = input("Pick an operation: ")
         num2 = float(input("What's the next number?: "))
         result = operator_dictionary[operation](num1,num2)
@@ -37,3 +38,5 @@ while(True):
         if y_n == "n":
             flag = False
             os.system('cls')
+            calculator()
+calculator()
