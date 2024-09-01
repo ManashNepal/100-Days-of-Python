@@ -1,3 +1,6 @@
-float_num = 123.345555
-num = "{:.2f}".format(float_num)
-print(f"The number is {num}.")
+def add(n1,n2):
+    return n1+n2
+
+operation1 = add
+
+print(7/2)
