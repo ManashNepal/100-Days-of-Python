@@ -21,17 +21,10 @@ ____   ____
              \/ 
 """
 
-# Global Variables
-A = {}
-B = {}
-score = 0
-print(logo)
-
 def changeB():
     global A,B
     while A == B:
         B = random.choice(data)
-
 
 def get_AB(score):
     global A, B
@@ -51,8 +44,12 @@ def choice():
     choice = input("Who has more followers? Type 'A' or 'B': ").upper()
     return choice
 
-
+# Global Variables
+A = {}
+B = {}
+score = 0
 flag = True
+print(logo)
 
 while flag:
     get_AB(score)
