@@ -44,6 +44,13 @@ def choice():
     choice = input("Who has more followers? Type 'A' or 'B': ").upper()
     return choice
 
+def is_correct(user_choice):
+    if A["follower_count"] > B["follower_count"]:
+        return user_choice == "A"
+    else:
+        return user_choice == "B"
+
+
 # Global Variables
 A = {}
 B = {}
@@ -54,7 +61,7 @@ print(logo)
 while flag:
     get_AB(score)
     user_choice = choice()
-    if (user_choice == "A" and A["follower_count"] > B["follower_count"]) or (user_choice == "B" and B["follower_count"] > A["follower_count"]):
+    if is_correct(user_choice):
         score += 1
         os.system('cls')
         print(logo)
