@@ -38,7 +38,7 @@ def make_coffee(coffee_type):
 
 def customer_payment():
     """Ask the user to pay in number of coins."""
-    print("Please inset coins:-")
+    print("Please insert coins:-")
     quarters = int(input("how many quarters?: "))
     dimes = int(input("how many dimes?: "))
     nickels = int(input("how many nickles?: "))
