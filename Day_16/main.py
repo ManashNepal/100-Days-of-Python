@@ -19,8 +19,11 @@ while is_on:
         coffee_maker.report()
         money_machine.report()
     else:
-        user_drink  = menu.find_drink(user_choice)
-
-        if(coffee_maker.is_resource_sufficient(user_drink)):
-            if(money_machine.make_payment(user_drink.cost)):
-                coffee_maker.make_coffee(user_drink)
+        try:
+            user_drink  = menu.find_drink(user_choice)
+        
+            if(coffee_maker.is_resource_sufficient(user_drink)):
+                if(money_machine.make_payment(user_drink.cost)):
+                    coffee_maker.make_coffee(user_drink)
+        except Exception:
+            continue
