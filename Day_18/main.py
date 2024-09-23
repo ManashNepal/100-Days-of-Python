@@ -24,6 +24,7 @@ my_turtle = Turtle()
 screen = Screen()
 
 my_turtle.speed("fastest")
+my_turtle.hideturtle()
 
 # Setting to a specific position
 my_turtle.penup()
@@ -31,26 +32,21 @@ my_turtle.setposition(-240,-200)
 
 
 def go_to_initial():
-    # my_turtle.penup()
     my_turtle.left(90)
     my_turtle.forward(50)
     my_turtle.left(90)
-    for _ in range(9):
+    for _ in range(10):
         my_turtle.forward(50)
-    my_turtle.right(180)
+    my_turtle.setheading(0)
 
 def draw():
-    for _ in range(9):
+    for _ in range(10):
         my_turtle.dot(17, random.choice(color_list))
         my_turtle.forward(50)  
-    my_turtle.dot(17, random.choice(color_list))
 
 
-for _ in range(9):
+for _ in range(10):
     draw()
     go_to_initial()
-draw()
-
-
 
 screen.exitonclick()
