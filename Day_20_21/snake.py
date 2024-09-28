@@ -7,8 +7,8 @@ RIGHT = 0
 LEFT = 180
 
 class Snake:
-    pieces = []
     def __init__(self):
+        self.pieces = []
         starting_pos = [(0,0), (-20,0), (-40,0)]
         for pos in starting_pos:
             snake_piece = Turtle(shape="square")
