@@ -4,6 +4,7 @@ from snake import Snake
 from food import Food
 import random
 from scoreboard import Scoreboard
+from special_food import SpecialFood
 
 screen = Screen()
 screen.setup(width=600, height=600)
@@ -22,6 +23,13 @@ screen.onkey(snake.right, "Right")
 food = Food()
 scoreboard = Scoreboard()
 
+
+def over():
+    global game_still_on
+    game_still_on = False
+    scoreboard.game_over()
+
+count = 0
 game_still_on = True
 while game_still_on:
     screen.update()
@@ -29,23 +37,22 @@ while game_still_on:
 
     snake.move()
 
-    # Collison with food
+
+    # Collison with food - 1pt.
     if snake.head.distance(food)  < 15:
         food.refresh()
         snake.grow()
         scoreboard.update_score()
-    
+        count += 1
+        
     # Collision with wall
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
-        game_still_on = False
-        scoreboard.game_over()
+        over()
     
     # Collision with Tail
-    for n in range(1,len(snake.pieces)-1):
-        if snake.head.distance(snake.pieces[n])<15:
-            print(snake.head.distance(snake.pieces[n]))
-            game_still_on = False
-            scoreboard.game_over()
+    for piece in snake.pieces[1:]:
+        if snake.head.distance(piece) < 10:
+            over()
 
 
 screen.exitonclick()
