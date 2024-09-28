@@ -4,7 +4,6 @@ from snake import Snake
 from food import Food
 import random
 from scoreboard import Scoreboard
-from special_food import SpecialFood
 
 screen = Screen()
 screen.setup(width=600, height=600)
@@ -44,7 +43,7 @@ while game_still_on:
         snake.grow()
         scoreboard.update_score()
         count += 1
-        
+
     # Collision with wall
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
         over()
