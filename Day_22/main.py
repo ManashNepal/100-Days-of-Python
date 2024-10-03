@@ -52,8 +52,6 @@ def paddle_miss():
 
 game_is_on = True
 
-t1 = 0.1
-
 while game_is_on:
     screen.update()
     time.sleep(ball.move_speed)
@@ -66,7 +64,6 @@ while game_is_on:
     #Detection with both paddle
     if can_bounce_on_paddle():
         ball.bounce_paddle()
-        t1 = 0.05
         
         
     #Detect when paddle misses
