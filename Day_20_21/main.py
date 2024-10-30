@@ -23,10 +23,9 @@ food = Food()
 scoreboard = Scoreboard()
 
 
-def over():
-    global game_still_on
-    game_still_on = False
-    scoreboard.game_over()
+# def over():
+#     global game_still_on
+#     game_still_on = False
 
 count = 0
 game_still_on = True
@@ -46,12 +45,14 @@ while game_still_on:
 
     # Collision with wall
     if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
-        over()
+        scoreboard.reset()
+        snake.reset()
     
     # Collision with Tail
     for piece in snake.pieces[1:]:
         if snake.head.distance(piece) < 10:
-            over()
+            scoreboard.reset()
+            snake.reset()
 
 
 screen.exitonclick()

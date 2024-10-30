@@ -5,14 +5,24 @@ UP = 90
 DOWN = 270
 RIGHT = 0
 LEFT = 180
+STARTING_POS = [(0,0), (-20,0), (-40,0)]
 
 class Snake:
     def __init__(self):
         self.pieces = []
-        starting_pos = [(0,0), (-20,0), (-40,0)]
-        for pos in starting_pos:
+        self.create_snake()
+        
+    def create_snake(self):
+        for pos in STARTING_POS:
             self.add_piece(pos)
         self.head = self.pieces[0]
+
+    def reset(self):
+        for piece in self.pieces:
+            piece.goto(1000,1000)
+        self.pieces.clear()
+        self.create_snake()
+        
     
     def add_piece(self,position):
         new_piece = Turtle(shape="square")
