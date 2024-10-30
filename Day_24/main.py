@@ -9,4 +9,4 @@ for name in names:
     receiver = name.strip()
     new_contents = contents.replace("[name]",receiver)
     with open(f"./Output/ReadyToSend/letter_for_{receiver}.txt", mode="w") as ready_letters:
-        letters = ready_letters.write(new_contents)
+        ready_letters.write(new_contents)
